@@ -45,28 +45,7 @@ if ($row)
 {
     die("This Character name is already registered");
 }
-$query = "
-SELECT
-*
-FROM badname
-WHERE
-bad LIKE ?
-";
-$cname = '%' . $_POST['name'] . '%';
-$query_params = array($cname);
-try
-{
-    $stmt = $dbh->prepare($query);
-    $result = $stmt->execute($query_params);
-} catch (PDOException $ex)
-{
-    die("Failed to run query: " . $ex->getMessage());
-}
-$row = $stmt->fetch();
-if ($row)
-{
-    die("This Character name is not allowed");
-}
+
 $genclass = $gender . $class;
 $old_path = getcwd();
 $output = shell_exec("./create_character $sID $name $genclass");
