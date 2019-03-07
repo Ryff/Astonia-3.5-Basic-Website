@@ -27,7 +27,7 @@ else if ($select_class == '2')
 $query = "
 SELECT
 1
-FROM charinfo
+FROM chars
 WHERE
 name = :name
 ";
