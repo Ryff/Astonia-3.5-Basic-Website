@@ -30,7 +30,7 @@ SELECT
 FROM chars
 WHERE
 name = :name
-",dbh2);
+",$dbh2);
 $query_params = array(':name' => $_POST['name']);
 try
 {
