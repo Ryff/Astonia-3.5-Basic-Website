@@ -24,17 +24,17 @@ if ($select_class == '1')
     $class = 'M';
 else if ($select_class == '2')
     $class = 'W';
-$query = "(
+$query = "
 SELECT
 1
 FROM chars
 WHERE
 name = :name
-",$dbh2);
+",$dbh2;
 $query_params = array(':name' => $_POST['name']);
 try
 {
-    $stmt = $dbh->prepare($query);
+    $stmt = $dbh2->prepare($query);
     $result = $stmt->execute($query_params);
 } catch (PDOException $ex)
 {
