@@ -10,7 +10,7 @@ $analytics = "UA-51401830-13"; // Google analytics code, to keep track of people
 $mysql_hostname = 'localhost';
 $mysql_username = 'root';
 $mysql_password = '';
-$mysql_dbname = 'merc';
+$mysql_dbname = 'merc1';
 $dbh = new PDO("mysql:host=$mysql_hostname;dbname=$mysql_dbname", $mysql_username, $mysql_password);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
