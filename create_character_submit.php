@@ -1,5 +1,5 @@
 <?php
-require("config2.php");
+require("config.php");
 
 $sID = $_SESSION['user_id'];
 $name = ucfirst(strtolower(($_POST['name'])));
