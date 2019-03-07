@@ -19,7 +19,7 @@ Want to buy me a beer for this? Sure! I love beer!
 ## Installation:
 ```sh
 $ CD Into your var/www/html folder or any folder you have specifically for the website (See apache/nginx documentation for this)
-$ git clone git@github.com:Ryff/Astonia-Basic-Website.git Website (requires git installed on the machine)
+$ git clone git@github.com:Ryff/Astonia-3.5-Basic-Website.git Website (requires git installed on the machine)
 $ cd Website
 $ vim config.php (Make the changes to reflect your database/servername here)
 $ Move your create_character script to the web folder for character creation to function
