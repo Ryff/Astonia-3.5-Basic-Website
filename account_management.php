@@ -24,9 +24,9 @@ if (!isset($_SESSION['user_id']))
         /*** check for a result ***/
         $username = $stmt->fetch();
 
-        $stmt = $dbh->prepare('SELECT * FROM charinfo WHERE sID = :sID ORDER BY experience');
-        $stmt->execute(array('sID' => $_SESSION['user_id']));
-        $result_chars = $stmt->fetchAll();
+        $mercit = $dbh2->prepare('SELECT * FROM chars WHERE sID = :sID ORDER BY experience');
+        $mercit->execute(array('sID' => $_SESSION['user_id']));
+        $result_chars = $mercit->fetchAll();
 
         /*** if we have no something is wrong ***/
         if ($username == false)
@@ -63,8 +63,7 @@ if (!isset($_SESSION['user_id']))
     <tr>
         <td>Character name:</td>
         <td>Level:</td>
-        <td>Karma:</td>
-        <td>Locked:</td>
+
     </tr>
     <?php
     if (count($result_chars))
@@ -78,8 +77,7 @@ if (!isset($_SESSION['user_id']))
             echo '<tr>';
             echo "<td>>" . $row['name'] . "</td>";
             echo "<td>" . $exp . "</td>";
-            echo "<td>" . $row['karma'] . "</td>";
-            echo "<td>" . $row['locked'] . "</td>";
+
             echo '</tr>';
         }
     } else
