@@ -38,7 +38,7 @@ elseif (ctype_alnum($_POST['password']) != true)
     {
 
         /*** prepare the select statement ***/
-        $stmt = $dbh->prepare("SELECT ID,email,first_name,last_name,address1,address2,address3,password,admin,locked,banned
+        $stmt = $dbh->prepare("SELECT ID,email,first_name,last_name,address1,address2,address3,password,admin,banned
 				FROM subscriber
                     WHERE email = :username AND password = :password");
 
