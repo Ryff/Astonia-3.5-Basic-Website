@@ -1,6 +1,6 @@
 <?php
 require("config.php");
-$stmt = $dbh->prepare('SELECT * FROM charinfo ORDER BY experience DESC LIMIT 0,34;');
+$stmt = $dbh2->prepare('SELECT * FROM chars ORDER BY experience DESC LIMIT 0,34;');
 $stmt->execute();
 $result = $stmt->fetchAll();
 $place = 1;
