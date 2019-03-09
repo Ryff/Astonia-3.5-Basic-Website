@@ -5,7 +5,7 @@ try
 {
 
     $area = 0;
-    $stmt = $dbh->prepare('SELECT * FROM charinfo WHERE current_area != :area ORDER BY current_area');
+    $stmt = $dbh2->prepare('SELECT * FROM chars WHERE current_area != :area ORDER BY current_area');
     $stmt->execute(array('area' => $area));
     $result = $stmt->fetchAll();
 } catch (Exception $e)
