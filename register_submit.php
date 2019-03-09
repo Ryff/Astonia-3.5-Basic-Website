@@ -1,6 +1,25 @@
 <?php
 require("config.php");
 
+$query ="SELECT 1 FROM subscriber WHERE email = :username";
+$query_params = array(':username' => $_POST['email']);
+
+try
+{
+    $mercit = $dbh2->prepare($query);
+    $result = $mercit->execute($query_params);
+
+} catch (PDOException $ex)
+{
+    die("Failed to run query: " . $ex->getMessage());
+}
+$row = $mercit->fetch();
+
+if ($row)
+{
+    $message = 'This Account name is already registered';
+}
+
 /*** first check that both the username, password and form token have been sent ***/
 if (!isset($_POST['username'], $_POST['password'], $_POST['form_token']))
 {
