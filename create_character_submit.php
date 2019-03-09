@@ -48,6 +48,6 @@ if ($row)
 
 $genclass = $gender . $class;
 $old_path = getcwd();
-$output = shell_exec("./create_character $sID $name $genclass");
+$output = shell_exec('sudo cd /home/astonia/astonia35_server/; ./create_character "'.$sID.'" "'.$name.'" "'.$genclass.'" 2>&1');
 header("Location: account_management.php"); ?>`
 <?php include_once("analytics.php") ?>
