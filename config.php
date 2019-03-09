@@ -17,20 +17,4 @@ $dbh2 = new PDO("mysql:host=$mysql_hostname;dbname=$mysql_db2name", $mysql_usern
 
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
-// Some functions to help out here n there ;)
-
-
-// helps filtering bad names =)
-function contains($str, array $arr)
-{
-    foreach ($arr as $a)
-    {
-        if (stripos($a, $str) !== false) return true;
-    }
-
-    return false;
-}
-
-
 ?>
